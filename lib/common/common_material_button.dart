@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import '../constant/constant.dart';
 
 class CommonMaterialButton extends StatelessWidget {
@@ -13,7 +14,12 @@ class CommonMaterialButton extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialButton(
       color: color,
+      padding: const EdgeInsets.all(15.0),
       onPressed: onPressed,
+      minWidth: Get.width,
+      shape: const RoundedRectangleBorder(
+          borderRadius: BorderRadius.all(Radius.circular(10.0)),
+          side: BorderSide.none),
       child: Text(
         text.toString(),
         style: CustomTextStyle.whiteTextStyle,

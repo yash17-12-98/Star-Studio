@@ -7,45 +7,57 @@ class CommonTextField extends StatelessWidget {
   final void Function(String)? onChanged;
   final String? errorText;
   final String? labelText;
-  final Icon? prefixIcon;
+  final Widget? prefixIcon;
+  final TextInputType? textInputType;
+  final bool? isBorder;
 
-  const CommonTextField(
-      {Key? key,
-      required this.controller,
-      this.hintText,
-      this.onChanged,
-      this.errorText,
-      this.labelText,
-      this.prefixIcon,})
-      : super(key: key);
+  const CommonTextField({
+    Key? key,
+    required this.controller,
+    this.hintText,
+    this.onChanged,
+    this.errorText,
+    this.labelText,
+    this.prefixIcon,
+    this.textInputType = TextInputType.none,
+    this.isBorder = false,
+  }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return TextFormField(
       controller: controller,
-      style: const TextStyle(
-        fontSize: 24,
-        color: Colors.blue,
-      ),
+      style: CustomTextStyle.textFieldTextStyle,
       onChanged: onChanged,
+      keyboardType: textInputType,
       cursorColor: ColorConfig.colorGrey,
+      autocorrect: false,
+      enableSuggestions: false,
       decoration: InputDecoration(
         filled: true,
         isDense: true,
         focusColor: Colors.white,
         prefixIcon: prefixIcon,
-        errorText: errorText,
         border: OutlineInputBorder(
-          borderRadius: BorderRadius.circular(10.0),
-        ),
+            borderRadius: BorderRadius.circular(10.0),
+            borderSide: isBorder == false
+                ? BorderSide.none
+                : const BorderSide(color: ColorConfig.colorDarkViolet)),
+        enabledBorder: OutlineInputBorder(
+            borderRadius: BorderRadius.circular(10.0),
+            borderSide: isBorder == false
+                ? BorderSide.none
+                : const BorderSide(color: ColorConfig.colorDarkViolet)),
         focusedBorder: OutlineInputBorder(
-          borderSide: const BorderSide(width: 1.0),
-          borderRadius: BorderRadius.circular(10.0),
-        ),
-        fillColor: Colors.grey[300],
+            borderRadius: BorderRadius.circular(10.0),
+            borderSide: isBorder == false
+                ? BorderSide.none
+                : const BorderSide(color: ColorConfig.colorDarkViolet)),
+        fillColor: ColorConfig.colorWhite,
         hintText: hintText,
         hintStyle: CustomTextStyle.textFieldHintStyle,
-        // labelText: labelText,
+        labelText: labelText,
+        labelStyle: CustomTextStyle.textFieldHintStyle,
       ),
     );
   }

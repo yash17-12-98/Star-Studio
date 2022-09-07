@@ -7,4 +7,8 @@ class ColorConfig{
   static const colorRed = Colors.red;
   static const colorBlue = Colors.blue;
   static const colorViolet = Colors.purple;
+  static const colorLightGrey = Color(0xFFF2F3F5);
+  static const colorDarkViolet = Color(0xFF59007f);
+  static const colorShineGold = Color(0xFFFFE373);
+  static const colorTextViolet = Color(0xFF331343);
 }

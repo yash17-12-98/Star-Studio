@@ -8,13 +8,37 @@ mixin AppTextStyle {
 
 class CustomTextStyle {
   static TextStyle textFieldHintStyle = const TextStyle(
-    fontFamily: AppTextStyle.nunitoRegular,
-    color: ColorConfig.colorGrey,
-    fontSize: 15,
+    color: ColorConfig.colorDarkViolet,
   );
   static TextStyle whiteTextStyle = const TextStyle(
-    fontFamily: AppTextStyle.nunitoRegular,
     color: ColorConfig.colorWhite,
     fontSize: 15,
   );
+  static TextStyle goldHeadingTextStyle = const TextStyle(
+    color: ColorConfig.colorShineGold,
+    letterSpacing: 10,
+    fontWeight: FontWeight.bold,
+    fontSize: 40,
+  );
+  static TextStyle goldSubTitleTextStyle = const TextStyle(
+    color: ColorConfig.colorShineGold,
+    fontWeight: FontWeight.normal,
+    fontSize: 18,
+  );
+  static TextStyle goldSubTitleUnderlineTextStyle = const TextStyle(
+    color: ColorConfig.colorShineGold,
+    fontWeight: FontWeight.normal,
+    decoration: TextDecoration.underline,
+    fontSize: 18,
+  );
+  static TextStyle textFieldTextStyle = const TextStyle(
+    color: ColorConfig.colorTextViolet,
+    fontWeight: FontWeight.normal,
+    // fontSize: 20,
+  );
+  static TextStyle violetHeadingTextStyle = const TextStyle(
+      fontFamily: AppTextStyle.nunitoRegular,
+      color: ColorConfig.colorDarkViolet,
+      fontWeight: FontWeight.bold,
+      fontSize: 30);
 }

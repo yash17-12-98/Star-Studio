@@ -7,7 +7,6 @@ class SignUpController extends BaseController {
   TextEditingController firstNameController = TextEditingController();
   TextEditingController lastNameController = TextEditingController();
   TextEditingController emailController = TextEditingController();
-  TextEditingController birthDayController = TextEditingController();
   TextEditingController phoneController = TextEditingController();
   TextEditingController pwdController = TextEditingController();
   TextEditingController cnfPwdController = TextEditingController();
