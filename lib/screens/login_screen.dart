@@ -4,6 +4,7 @@ import 'package:get/get.dart';
 import 'package:star_studio/constant/color_config.dart';
 import 'package:star_studio/constant/constant.dart';
 import 'package:star_studio/constant/image_path.dart';
+import 'package:star_studio/screens/home/home_screen.dart';
 import 'package:star_studio/screens/signup_screen.dart';
 import '../common/common.dart';
 import '../controllers/controllers.dart';
@@ -98,7 +99,7 @@ class LoginScreen extends GetView<LoginController> {
                           color: ColorConfig.colorViolet,
                           text: 'Login',
                           onPressed: () {
-                            Get.toNamed(SignUpScreen.pageId);
+                            Get.toNamed(HomeScreen.pageId);
                           },
                         ),
                         const SizedBox(
@@ -119,11 +120,16 @@ class LoginScreen extends GetView<LoginController> {
                                 scale: 20,
                                 color: ColorConfig.colorShineGold,
                               ),
-                              Text(
-                                "Signup",
-                                textAlign: TextAlign.center,
-                                style: CustomTextStyle
-                                    .goldSubTitleUnderlineTextStyle,
+                              GestureDetector(
+                                onTap: () {
+                                  Get.toNamed(SignUpScreen.pageId);
+                                },
+                                child: Text(
+                                  "Signup",
+                                  textAlign: TextAlign.center,
+                                  style: CustomTextStyle
+                                      .goldSubTitleUnderlineTextStyle,
+                                ),
                               ),
                             ],
                           ),

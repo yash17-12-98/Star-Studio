@@ -24,7 +24,9 @@ class SignUpScreen extends GetView<SignUpController> {
             iconSize: 50.0,
             color: ColorConfig.colorDarkViolet,
             icon: const Icon(Icons.keyboard_arrow_left),
-            onPressed: () {},
+            onPressed: () {
+              Get.back();
+            },
           ),
           Padding(
             padding:

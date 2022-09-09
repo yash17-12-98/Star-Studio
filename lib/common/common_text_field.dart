@@ -11,9 +11,9 @@ class CommonTextField extends StatelessWidget {
   final TextInputType? textInputType;
   final bool? isBorder;
 
-  const CommonTextField({
+    const CommonTextField({
     Key? key,
-    required this.controller,
+    this.controller,
     this.hintText,
     this.onChanged,
     this.errorText,

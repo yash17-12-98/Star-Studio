@@ -6,4 +6,5 @@ class ImagePath {
   static String hiGif = 'assets/images/hi_gif.gif';
   static String emailIcon = 'assets/images/email_icon.png';
   static String phoneIcon = 'assets/images/phone_icon.png';
+  static String searchIcon = 'assets/images/search_icon.png';
 }
