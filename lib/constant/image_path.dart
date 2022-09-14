@@ -7,4 +7,9 @@ class ImagePath {
   static String emailIcon = 'assets/images/email_icon.png';
   static String phoneIcon = 'assets/images/phone_icon.png';
   static String searchIcon = 'assets/images/search_icon.png';
+  static String placeHolderImg = 'assets/images/placeholder_img.png';
+  static String scissorIcon = 'assets/images/scissors_icon.png';
+  static String makeUpIcon = 'assets/images/makeup_icon.png';
+  static String skinIcon = 'assets/images/skin_icon.png';
+  static String otherIcon = 'assets/images/other_icon.png';
 }

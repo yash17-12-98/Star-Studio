@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:star_studio/common/common_text_field.dart';
 
 import '../constant/constant.dart';
 
@@ -23,14 +22,14 @@ class CommonAppBar extends StatelessWidget {
   Widget build(BuildContext context) {
     return SliverAppBar(
       snap: true,
-      pinned: true,
+      pinned: false,
       floating: true,
       automaticallyImplyLeading: false,
       toolbarHeight: kToolbarHeight + toolbarHeight!,
       centerTitle: centerTitle,
       title: title,
       bottom: bottom,
-      expandedHeight: 240,
+      expandedHeight: 200,
       // flexibleSpace: FlexibleSpaceBar(
       //   title: Padding(
       //     padding: const EdgeInsets.all(8.0),
