@@ -41,4 +41,24 @@ class CustomTextStyle {
       color: ColorConfig.colorDarkViolet,
       fontWeight: FontWeight.bold,
       fontSize: 30);
+  static TextStyle violetBoldNameTextStyle = const TextStyle(
+      fontFamily: AppTextStyle.nunitoRegular,
+      color: ColorConfig.colorDarkViolet,
+      fontWeight: FontWeight.w700,
+      fontSize: 30);
+  static TextStyle violetLightSubNameTextStyle = const TextStyle(
+      fontFamily: AppTextStyle.nunitoRegular,
+      color: ColorConfig.colorDarkViolet,
+      fontWeight: FontWeight.normal,
+      fontSize: 20);
+  static TextStyle violetLightSmallNameTextStyle = const TextStyle(
+      fontFamily: AppTextStyle.nunitoRegular,
+      color: ColorConfig.colorDarkViolet,
+      fontWeight: FontWeight.normal,
+      fontSize: 15);
+  static TextStyle violetMediumSubNameTextStyle = const TextStyle(
+      fontFamily: AppTextStyle.nunitoRegular,
+      color: ColorConfig.colorDarkViolet,
+      fontWeight: FontWeight.w600,
+      fontSize: 25);
 }

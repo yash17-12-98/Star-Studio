@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:star_studio/common/common.dart';
+import 'package:star_studio/screens/drawer/right_navigation_drawer.dart';
 import '../../constant/constant.dart';
 import '../../controllers/controllers.dart';
 
@@ -13,6 +14,7 @@ class HomeScreen extends GetView<HomeController> {
   Widget build(BuildContext context) {
     return Scaffold(
         backgroundColor: ColorConfig.colorDarkViolet,
+        endDrawer: const RightNavigationDrawer(),
         body: SafeArea(
           child: NestedScrollView(
             physics: const ScrollPhysics(),
@@ -60,7 +62,9 @@ class HomeScreen extends GetView<HomeController> {
                       iconSize: 30.0,
                       icon: const Icon(Icons.menu),
                       tooltip: 'Menu',
-                      onPressed: () {},
+                      onPressed: () {
+                        Scaffold.of(context).openEndDrawer();
+                      },
                     ),
                   ), //IconButton
                 ],
