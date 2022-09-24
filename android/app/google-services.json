@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "553608015155",
+    "project_id": "star-studio-20bb7",
+    "storage_bucket": "star-studio-20bb7.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:553608015155:android:164344f489bb344da5a246",
+        "android_client_info": {
+          "package_name": "com.example.star_studio"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "553608015155-p28thr76vie8ghv9lc0gi7qak8q7u8pf.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBQ4vkDFnaYEank1Mz2GfM2IuAsnnCHQAs"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "553608015155-p28thr76vie8ghv9lc0gi7qak8q7u8pf.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
