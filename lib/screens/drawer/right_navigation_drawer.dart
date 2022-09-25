@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_staggered_animations/flutter_staggered_animations.dart';
 import 'package:get/get.dart';
 import '../../common/common.dart';
 import '../../constant/constant.dart';
@@ -14,298 +15,55 @@ class RightNavigationDrawer extends StatelessWidget {
         child: Drawer(
           backgroundColor: Colors.white.withOpacity(0.9),
           child: Padding(
-            padding: const EdgeInsets.all(10.0),
-            child: ListView(
-              children: [
-                const SizedBox(
-                  height: 10.0,
-                ),
-                Card(
-                  shape: const RoundedRectangleBorder(
-                      borderRadius: BorderRadius.all(Radius.circular(10.0)),
-                      side: BorderSide.none),
-                  child: Padding(
-                    padding: const EdgeInsets.all(8.0),
-                    child: Row(
-                      children: [
-                        Padding(
-                          padding: const EdgeInsets.all(8.0),
-                          child: CircleAvatar(
-                            radius: 40,
-                            backgroundColor: ColorConfig.colorDarkViolet,
-                            child: Image.asset(
-                              ImagePath.userIcon,
-                              scale: 12,
-                              color: ColorConfig.colorWhite,
-                            ),
-                          ),
-                        ),
-                        Expanded(
-                          child: Column(
-                            crossAxisAlignment: CrossAxisAlignment.start,
-                            children: [
-                              Row(
-                                children: [
-                                  Expanded(
-                                    child: Text(
-                                      'Tara',
-                                      style: CustomTextStyle
-                                          .violetBoldNameTextStyle,
+            padding: const EdgeInsets.only(left: 10.0, right: 10.0),
+            child: AnimationLimiter(
+              child: ListView(
+                children: [
+                  const SizedBox(
+                    height: 10.0,
+                  ),
+                  AnimationConfiguration.staggeredList(
+                    position: 1,
+                    duration: const Duration(milliseconds: 375),
+                    child: SlideAnimation(
+                      child: FadeInAnimation(
+                        child: Card(
+                          shape: const RoundedRectangleBorder(
+                              borderRadius:
+                                  BorderRadius.all(Radius.circular(10.0)),
+                              side: BorderSide.none),
+                          child: Padding(
+                            padding: const EdgeInsets.all(8.0),
+                            child: Row(
+                              children: [
+                                Padding(
+                                  padding: const EdgeInsets.all(8.0),
+                                  child: CircleAvatar(
+                                    radius: 40,
+                                    backgroundColor:
+                                        ColorConfig.colorDarkViolet,
+                                    child: Image.asset(
+                                      ImagePath.userIcon,
+                                      scale: 12,
+                                      color: ColorConfig.colorWhite,
                                     ),
                                   ),
-                                  IconButton(
-                                    padding: EdgeInsets.zero,
-                                    iconSize: 30.0,
-                                    icon: const Icon(
-                                      Icons.arrow_forward_ios,
-                                      size: 25,
-                                      color: ColorConfig.colorDarkViolet,
-                                    ),
-                                    tooltip: 'profile',
-                                    onPressed: () {
-                                      Scaffold.of(context).openEndDrawer();
-                                    },
-                                  ),
-                                ],
-                              ),
-                              Text(
-                                'tinajain1305@gmail.com',
-                                style:
-                                    CustomTextStyle.violetLightSubNameTextStyle,
-                              )
-                            ],
-                          ),
-                        ),
-                      ],
-                    ),
-                  ),
-                ),
-                Row(
-                  children: [
-                    Expanded(
-                      child: Card(
-                        shape: const RoundedRectangleBorder(
-                            borderRadius:
-                                BorderRadius.all(Radius.circular(10.0)),
-                            side: BorderSide.none),
-                        child: Padding(
-                          padding: const EdgeInsets.all(15.0),
-                          child: Column(
-                            children: [
-                              Image.asset(
-                                ImagePath.heartIcon,
-                                scale: 10,
-                                color: ColorConfig.colorDarkViolet,
-                              ),
-                              const SizedBox(
-                                height: 5.0,
-                              ),
-                              Text(
-                                'Likes',
-                                style: CustomTextStyle
-                                    .violetLightSmallNameTextStyle,
-                              )
-                            ],
-                          ),
-                        ),
-                      ),
-                    ),
-                    Expanded(
-                      child: Card(
-                        shape: const RoundedRectangleBorder(
-                            borderRadius:
-                                BorderRadius.all(Radius.circular(10.0)),
-                            side: BorderSide.none),
-                        child: Padding(
-                          padding: const EdgeInsets.all(15.0),
-                          child: Column(
-                            children: [
-                              Image.asset(
-                                ImagePath.notificationIcon,
-                                scale: 10,
-                                color: ColorConfig.colorDarkViolet,
-                              ),
-                              const SizedBox(
-                                height: 5.0,
-                              ),
-                              Text(
-                                'Notification',
-                                style: CustomTextStyle
-                                    .violetLightSmallNameTextStyle,
-                              )
-                            ],
-                          ),
-                        ),
-                      ),
-                    ),
-                    Expanded(
-                      child: Card(
-                        shape: const RoundedRectangleBorder(
-                            borderRadius:
-                                BorderRadius.all(Radius.circular(10.0)),
-                            side: BorderSide.none),
-                        child: Padding(
-                          padding: const EdgeInsets.all(15.0),
-                          child: Column(
-                            children: [
-                              Image.asset(
-                                ImagePath.homeIcon,
-                                scale: 10,
-                                color: ColorConfig.colorDarkViolet,
-                              ),
-                              const SizedBox(
-                                height: 5.0,
-                              ),
-                              Text(
-                                'Home',
-                                style: CustomTextStyle
-                                    .violetLightSmallNameTextStyle,
-                              )
-                            ],
-                          ),
-                        ),
-                      ),
-                    ),
-                  ],
-                ),
-                Card(
-                  shape: const RoundedRectangleBorder(
-                      borderRadius: BorderRadius.all(Radius.circular(10.0)),
-                      side: BorderSide.none),
-                  child: Row(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      Container(
-                        margin: const EdgeInsets.only(top: 10.0),
-                        height: 30.0,
-                        width: 10.0,
-                        decoration: const BoxDecoration(
-                          color: ColorConfig.colorDarkViolet,
-                          borderRadius: BorderRadius.only(
-                              topRight: Radius.circular(5.0),
-                              bottomRight: Radius.circular(5.0)),
-                        ),
-                      ),
-                      const SizedBox(
-                        width: 10.0,
-                      ),
-                      Padding(
-                        padding: const EdgeInsets.all(8.0),
-                        child: Column(
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          children: [
-                            Text(
-                              'Schedule',
-                              style:
-                                  CustomTextStyle.violetMediumSubNameTextStyle,
-                            ),
-                            const SizedBox(
-                              height: 10.0,
-                            ),
-                            Row(
-                              children: [
-                                Image.asset(
-                                  ImagePath.scheduleIcon,
-                                  scale: 15,
-                                  color: ColorConfig.colorDarkViolet,
                                 ),
-                                const SizedBox(
-                                  width: 10.0,
-                                ),
-                                Text(
-                                  'My Schedule',
-                                  style: CustomTextStyle
-                                      .violetLightSubNameTextStyle,
-                                ),
-                              ],
-                            ),
-                            const SizedBox(
-                              height: 10.0,
-                            ),
-                            Row(
-                              children: [
-                                Image.asset(
-                                  ImagePath.checkedIcon,
-                                  scale: 16,
-                                  color: ColorConfig.colorDarkViolet,
-                                ),
-                                const SizedBox(
-                                  width: 10.0,
-                                ),
-                                Text(
-                                  'All Schedule',
-                                  style: CustomTextStyle
-                                      .violetLightSubNameTextStyle,
-                                ),
-                              ],
-                            ),
-                            const SizedBox(
-                              height: 10.0,
-                            ),
-                          ],
-                        ),
-                      ),
-                    ],
-                  ),
-                ),
-                Card(
-                  shape: const RoundedRectangleBorder(
-                      borderRadius: BorderRadius.all(Radius.circular(10.0)),
-                      side: BorderSide.none),
-                  child: Row(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      Container(
-                        margin: const EdgeInsets.only(top: 10.0),
-                        height: 30.0,
-                        width: 10.0,
-                        decoration: const BoxDecoration(
-                          color: ColorConfig.colorDarkViolet,
-                          borderRadius: BorderRadius.only(
-                              topRight: Radius.circular(5.0),
-                              bottomRight: Radius.circular(5.0)),
-                        ),
-                      ),
-                      const SizedBox(
-                        width: 10.0,
-                      ),
-                      Expanded(
-                        child: Padding(
-                          padding: const EdgeInsets.all(8.0),
-                          child: Column(
-                            crossAxisAlignment: CrossAxisAlignment.start,
-                            children: [
-                              Text(
-                                'Feedback',
-                                style: CustomTextStyle
-                                    .violetMediumSubNameTextStyle,
-                              ),
-                              const SizedBox(
-                                height: 10.0,
-                              ),
-                              Row(
-                                children: [
-                                  Image.asset(
-                                    ImagePath.viewFeedbackIcon,
-                                    scale: 15,
-                                    color: ColorConfig.colorDarkViolet,
-                                  ),
-                                  const SizedBox(
-                                    width: 10.0,
-                                  ),
-                                  Expanded(
-                                    child: Row(
-                                      children: [
-                                        Expanded(
-                                          child: Text(
-                                            'View Feedback',
-                                            style: CustomTextStyle
-                                                .violetLightSubNameTextStyle,
+                                Expanded(
+                                  child: Column(
+                                    crossAxisAlignment:
+                                        CrossAxisAlignment.start,
+                                    children: [
+                                      Row(
+                                        children: [
+                                          Expanded(
+                                            child: Text(
+                                              'Tara',
+                                              style: CustomTextStyle
+                                                  .violetBoldNameTextStyle,
+                                            ),
                                           ),
-                                        ),
-                                        Align(
-                                          alignment: Alignment.centerRight,
-                                          child: IconButton(
+                                          IconButton(
                                             padding: EdgeInsets.zero,
                                             iconSize: 30.0,
                                             icon: const Icon(
@@ -314,150 +72,242 @@ class RightNavigationDrawer extends StatelessWidget {
                                               color:
                                                   ColorConfig.colorDarkViolet,
                                             ),
-                                            tooltip: 'Log out',
-                                            onPressed: () {},
+                                            tooltip: 'profile',
+                                            onPressed: () {
+                                              Scaffold.of(context)
+                                                  .openEndDrawer();
+                                            },
                                           ),
-                                        ),
-                                      ],
-                                    ),
+                                        ],
+                                      ),
+                                      Text(
+                                        'tinajain1305@gmail.com',
+                                        style: CustomTextStyle
+                                            .violetLightSubNameTextStyle,
+                                      )
+                                    ],
                                   ),
-                                ],
-                              ),
-                              const SizedBox(
-                                height: 10.0,
-                              ),
-                              Row(
-                                children: [
-                                  Image.asset(
-                                    ImagePath.sendFeedbackIcon,
-                                    scale: 16,
-                                    color: ColorConfig.colorDarkViolet,
-                                  ),
-                                  const SizedBox(
-                                    width: 10.0,
-                                  ),
-                                  Expanded(
-                                    child: Row(
-                                      children: [
-                                        Expanded(
-                                          child: Text(
-                                            'Send Feedback',
-                                            style: CustomTextStyle
-                                                .violetLightSubNameTextStyle,
-                                          ),
-                                        ),
-                                        IconButton(
-                                          padding: EdgeInsets.zero,
-                                          iconSize: 30.0,
-                                          icon: const Icon(
-                                            Icons.arrow_forward_ios,
-                                            size: 25,
-                                            color: ColorConfig.colorDarkViolet,
-                                          ),
-                                          tooltip: 'profile',
-                                          onPressed: () {
-                                            Scaffold.of(context)
-                                                .openEndDrawer();
-                                          },
-                                        ),
-                                      ],
-                                    ),
-                                  ),
-                                ],
-                              ),
-                              const SizedBox(
-                                height: 10.0,
-                              ),
-                            ],
+                                ),
+                              ],
+                            ),
                           ),
                         ),
                       ),
-                    ],
+                    ),
                   ),
-                ),
-                Card(
-                  shape: const RoundedRectangleBorder(
-                      borderRadius: BorderRadius.all(Radius.circular(10.0)),
-                      side: BorderSide.none),
-                  child: Row(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      Container(
-                        margin: const EdgeInsets.only(top: 10.0),
-                        height: 30.0,
-                        width: 10.0,
-                        decoration: const BoxDecoration(
-                          color: ColorConfig.colorDarkViolet,
-                          borderRadius: BorderRadius.only(
-                              topRight: Radius.circular(5.0),
-                              bottomRight: Radius.circular(5.0)),
-                        ),
-                      ),
-                      const SizedBox(
-                        width: 10.0,
-                      ),
-                      Expanded(
+                  AnimationConfiguration.staggeredList(
+                    position: 1,
+                    duration: const Duration(milliseconds: 375),
+                    child: SlideAnimation(
+                      child: FadeInAnimation(
                         child: Row(
                           children: [
                             Expanded(
-                              child: Text(
-                                'Logout',
-                                style: CustomTextStyle
-                                    .violetMediumSubNameTextStyle,
+                              child: Card(
+                                shape: const RoundedRectangleBorder(
+                                    borderRadius:
+                                        BorderRadius.all(Radius.circular(10.0)),
+                                    side: BorderSide.none),
+                                child: Padding(
+                                  padding: const EdgeInsets.all(15.0),
+                                  child: Column(
+                                    children: [
+                                      Image.asset(
+                                        ImagePath.heartIcon,
+                                        scale: 10,
+                                        color: ColorConfig.colorDarkViolet,
+                                      ),
+                                      const SizedBox(
+                                        height: 5.0,
+                                      ),
+                                      Text(
+                                        'Likes',
+                                        style: CustomTextStyle
+                                            .violetLightSmallNameTextStyle,
+                                      )
+                                    ],
+                                  ),
+                                ),
                               ),
                             ),
-                            IconButton(
-                              iconSize: 30.0,
-                              icon: Image.asset(
-                                ImagePath.logoutIcon,
-                                scale: 10.0,
-                                color: ColorConfig.colorDarkViolet,
+                            Expanded(
+                              child: Card(
+                                shape: const RoundedRectangleBorder(
+                                    borderRadius:
+                                        BorderRadius.all(Radius.circular(10.0)),
+                                    side: BorderSide.none),
+                                child: Padding(
+                                  padding: const EdgeInsets.all(15.0),
+                                  child: Column(
+                                    children: [
+                                      Image.asset(
+                                        ImagePath.notificationIcon,
+                                        scale: 10,
+                                        color: ColorConfig.colorDarkViolet,
+                                      ),
+                                      const SizedBox(
+                                        height: 5.0,
+                                      ),
+                                      Text(
+                                        'Notification',
+                                        style: CustomTextStyle
+                                            .violetLightSmallNameTextStyle,
+                                      )
+                                    ],
+                                  ),
+                                ),
                               ),
-                              tooltip: 'LOG OUT',
-                              onPressed: () {
-                                Scaffold.of(context).openEndDrawer();
-                              },
+                            ),
+                            Expanded(
+                              child: Card(
+                                shape: const RoundedRectangleBorder(
+                                    borderRadius:
+                                        BorderRadius.all(Radius.circular(10.0)),
+                                    side: BorderSide.none),
+                                child: Padding(
+                                  padding: const EdgeInsets.all(15.0),
+                                  child: Column(
+                                    children: [
+                                      Image.asset(
+                                        ImagePath.homeIcon,
+                                        scale: 10,
+                                        color: ColorConfig.colorDarkViolet,
+                                      ),
+                                      const SizedBox(
+                                        height: 5.0,
+                                      ),
+                                      Text(
+                                        'Home',
+                                        style: CustomTextStyle
+                                            .violetLightSmallNameTextStyle,
+                                      )
+                                    ],
+                                  ),
+                                ),
+                              ),
                             ),
                           ],
                         ),
                       ),
+                    ),
+                  ),
+                  AnimationConfiguration.staggeredList(
+                    position: 1,
+                    duration: const Duration(milliseconds: 375),
+                    child: FadeInAnimation(
+                      child: SlideAnimation(
+                        child: CommonDrawerCard(
+                            title: 'Schedule',
+                            firstTitle: 'My Schedule',
+                            firstIcon: Image.asset(
+                              ImagePath.scheduleIcon,
+                              scale: 15,
+                              color: ColorConfig.colorDarkViolet,
+                            ),
+                            firstOnTap: () {},
+                            secondTitle: 'All Schedule',
+                            secondIcon: Image.asset(
+                              ImagePath.checkedIcon,
+                              scale: 16,
+                              color: ColorConfig.colorDarkViolet,
+                            )),
+                      ),
+                    ),
+                  ),
+                  AnimationConfiguration.staggeredList(
+                    position: 1,
+                    duration: const Duration(milliseconds: 375),
+                    child: SlideAnimation(
+                      child: FadeInAnimation(
+                        child: CommonDrawerCard(
+                            title: 'Feedback',
+                            firstTitle: 'View Feedback',
+                            firstIcon: Image.asset(
+                              ImagePath.viewFeedbackIcon,
+                              scale: 15,
+                              color: ColorConfig.colorDarkViolet,
+                            ),
+                            firstOnTap: () {},
+                            secondTitle: 'Send Feedback',
+                            secondIcon: Image.asset(
+                              ImagePath.sendFeedbackIcon,
+                              scale: 16,
+                              color: ColorConfig.colorDarkViolet,
+                            )),
+                      ),
+                    ),
+                  ),
+                  Card(
+                    shape: const RoundedRectangleBorder(
+                        borderRadius: BorderRadius.all(Radius.circular(10.0)),
+                        side: BorderSide.none),
+                    child: Row(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Container(
+                          margin: const EdgeInsets.only(top: 10.0),
+                          height: 30.0,
+                          width: 10.0,
+                          decoration: const BoxDecoration(
+                            color: ColorConfig.colorDarkViolet,
+                            borderRadius: BorderRadius.only(
+                                topRight: Radius.circular(5.0),
+                                bottomRight: Radius.circular(5.0)),
+                          ),
+                        ),
+                        const SizedBox(
+                          width: 10.0,
+                        ),
+                        Expanded(
+                          child: Row(
+                            children: [
+                              Expanded(
+                                child: Text(
+                                  'Logout',
+                                  style: CustomTextStyle
+                                      .violetMediumSubNameTextStyle,
+                                ),
+                              ),
+                              IconButton(
+                                iconSize: 30.0,
+                                icon: Image.asset(
+                                  ImagePath.logoutIcon,
+                                  scale: 10.0,
+                                  color: ColorConfig.colorDarkViolet,
+                                ),
+                                tooltip: 'LOG OUT',
+                                onPressed: () {
+                                  Scaffold.of(context).openEndDrawer();
+                                },
+                              ),
+                            ],
+                          ),
+                        ),
+                      ],
+                    ),
+                  ),
+                  SizedBox(
+                    height: Get.height * 0.06,
+                  ),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    crossAxisAlignment: CrossAxisAlignment.center,
+                    children: const [
+                      Text(
+                        'Swipe right to go back',
+                      ),
+                      SizedBox(
+                        width: 10.0,
+                      ),
+                      Icon(
+                        Icons.arrow_forward_ios,
+                        size: 15,
+                        color: ColorConfig.colorDarkViolet,
+                      ),
                     ],
-                  ),
-                ),
-                CommonDrawerCard(
-                  title: 'Feedback',
-                  firstTitle: 'View Feedback',
-                  firstIcon: Image.asset(
-                    ImagePath.viewFeedbackIcon,
-                    scale: 15,
-                    color: ColorConfig.colorDarkViolet,
-                  ),
-                  firstOnTap: () {},
-                  secondTitle: 'Send Feedback',
-                  secondIcon: Image.asset(
-                    ImagePath.sendFeedbackIcon,
-                    scale: 16,
-                    color: ColorConfig.colorDarkViolet,
                   )
-                ),
-                const SizedBox(
-                  height: 10.0,
-                ),
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  crossAxisAlignment: CrossAxisAlignment.center,
-                  children: const [
-                    Text(
-                      'Swipe right to go back',
-                    ),
-                    Icon(
-                      Icons.arrow_forward_ios,
-                      size: 15,
-                      color: ColorConfig.colorDarkViolet,
-                    ),
-                  ],
-                )
-              ],
+                ],
+              ),
             ),
           ),
         ),
